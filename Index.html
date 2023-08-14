@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="Binge_2020-wedge.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BingeTV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <style>
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+        body{
+            background-image: linear-gradient(to left bottom, #000000, #4d4d4d, #000000);
+            background-size: contain;
+            background-attachment: fixed;
+        }
+
+        .main{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main div{
+            flex-direction: column;
+        }
+
+        .nav-logo .logo {
+            width: 200px;
+            height: 40px;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+        nav{
+            height: 70px;
+            width:100%;
+            background-color:#000000aa;
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            position: fixed;
+            z-index: 10;
+        }
+        .nav-logo img{
+            width:200px;
+            height:70px;
+            margin-left: 5px;
+            margin-top:5px;
+            
+        }
+        nav .nav-items{
+            position: absolute;
+            right: 20px;
+
+        }
+        .nav-items a{
+            text-decoration: none;
+            font-size: 15px;
+            padding:  15px 5px;
+            color: #008000;
+        }
+
+        .nav-items:hover a{
+            filter: blur(.6px);
+        }
+
+        .nav-items a:hover{
+            color: #008000;
+            background-color: #fff;
+            filter: blur(0px);
+            font-size: 20px;
+        }
+
+        .carousel-item{
+            height: 680px;
+            width: 100%;
+            position: relative;
+            border: 100px #423e3e00 solid;
+        }
+
+        .carousel-control-prev-icon{
+            position: relative;
+            left: 50px;
+            top: 40px;
+        }
+
+        .carousel-control-next-icon{
+            position: relative;
+            right: 50px;
+            top: 40px;
+        }
+        
+
+        .titles{
+            height: 20px;
+            color: #008000;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .titles h2{
+            font-size: 50px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .posters{
+            position: relative;
+            top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+
+        .posters img:hover{
+            scale: 1.1;
+            transition: all 5ms ease-in;
+        }
+
+        .posters1:hover .pos{
+        filter: blur(1px);
+        }
+
+        .posters1 .pos:hover{
+            filter: blur(0px);
+            position: relative;
+            z-index: 3;
+        }
+
+        .posters1 .pos:first-child:hover{
+            transform: translateX(20px);
+        }
+
+        .posters2:hover .pos{
+        filter: blur(1px);
+        }
+
+        .posters2 .pos:hover{
+            filter: blur(0px);
+            position: relative;
+            z-index: 3;
+        }
+
+        .posters2 .pos:first-child:hover{
+            transform: translateX(20px);
+        }
+
+        .pos{
+            height: 300px;
+            width: 200px;
+            border: 7px solid #008000;
+            box-shadow: 3px 3px 10px #000000;
+            margin-bottom: 20px;
+            margin-right: 10px;
+        }
+
+        .pos .pos1{
+            height: 100px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .pos .pos2{
+            height: 100px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            
+        }
+
+        .about{
+            color: #fff;
+            position: relative;
+            top: 1600px;
+            width: 100%;
+            height: 250px;
+            background-color: #0000009d;
+        }
+
+        .about h2{
+            font-size: 20px;
+            text-align: center;
+            position: relative;
+            top: 20px;
+        }
+
+        .au{
+            position: relative;
+            top: 50px;
+            left: 100px;
+            font-size: 20px;
+        }
+
+        .nh{
+            position: relative;
+            top: -30px;
+            left: 700px;
+            font-size: 20px;
+        }
+
+        .nh~h4{
+            font-size: 15px;
+            color: gray;
+        }
+
+        .cw{
+            position: relative;
+            top: -120px;
+            left: 1200px;
+            font-size: 20px;
+
+        }
+
+        .dummy{
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .par{
+            position: relative;
+            top: -70px;
+            left: 30px;
+            font-size: 13px;
+        }
+
+        .socials{
+            width: 100px;
+            position: relative;
+            left: 1250px;
+            top: -100px;
+        }
+
+        .f{
+            width: 30px;
+            position: relative;
+            left: -30px;
+        }
+
+        .x{
+            width: 30px;
+            position: relative;
+            left: 10px;
+        }
+
+        .box {
+			background-color: black;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		p {
+			font-size: 17px;
+			align-items: center;
+		}
+		.box a {
+			display: inline-block;
+			background-color: #fff;
+			padding: 15px;
+			border-radius: 3px;
+		}
+		.modal {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: #1e1e1ec6;
+			transition: all 0.4s;
+			visibility: hidden;
+			opacity: 0;
+		}
+		.content {
+			position: absolute;
+			background: #272727;
+			width: 400px;
+			padding: 1em 2em;
+			border-radius: 4px;
+		}
+		.modal:target {
+			visibility: visible;
+			opacity: 1;
+		}
+		.box-close {
+			position: absolute;
+			top: 0;
+			right: 15px;
+			color: #ff0000;
+			text-decoration: none;
+			font-size: 30px;
+		}
+
+        table h1{
+            color: #008000;
+        }
+
+        table label{
+            color: #fff;
+        }
+
+        table .button{
+            height: 40px;
+            width: 150px;
+            border-radius: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">
+            <img class="logo" src="Binge_2020.png" alt="">
+        </div>
+        <div class="nav-items">
+            <a href="#carouselExampleInterval">HOME</a>
+            <a href="#frq">FREQUENT</a>
+            <a href="#rec">RECENTS</a>
+            <a href="">TOP RATED</a>
+            <a href="">FAVOURITE</a>
+            <a href="#abo">ABOUT</a>
+            <a href="#popup-box">SIGN UP/SIGN IN</a>
+        </div>
+    </nav>
+    <div class="main">
+    <div class="titles">
+    </div>
+        <div class="car">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\Landscape Posters\TheMatrix.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="4000">
+                    <img src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\Landscape Posters\Pulp Fiction.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\Landscape Posters\JohnWick.jpg" class="d-block w-100" alt="...">
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\OTT\Landscape Posters\Joker.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+        </div>
+
+        <div class="posters">
+            <div class="titles">
+                <h2 id="frq">FREQUENTS</h2>
+                <div class="posters1">
+                    <div class="pos1">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\1917.jpg" alt="">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\about-time.jpg" alt="">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\dunkirk.jpg" alt="">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\el-camino.jpg" alt="">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\fast-furious.jpg" alt="">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\following.jpg" alt="">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\ford-v-ferrari.jpg" alt="">
+                    </div>
+                    <div class="pos2">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\guardians-of-the-galaxy.jpg" alt="">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\inception.jpg" alt="">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\inglourious-basterds.jpg" alt="">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\interstellar.jpg" alt="">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\jojo-rabbit.jpg" alt="">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\suicide-squad.jpg" alt="">
+                        <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\uncut-gems.jpg" alt="">
+                    </div>
+                </div>
+
+                    <h2  id="rec">RECENTS</h2>
+                    <div class="posters2">
+                        <div class="pos1">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\oppenheimer.jpg" alt="">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\lucy.jpg" alt="">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\memento.jpg" alt="">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\nordsjoen.jpg" alt="">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\ouatih.jpg" alt="">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\tenet.jpg" alt="">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\parasite.jpg" alt="">
+                        </div>
+
+                        <div class="pos2">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\transformers.jpg" alt="">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\flash.jpg" alt="">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\joker.jpg" alt="">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\the-revenant.jpg" alt="">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\twows.jpg" alt="">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\the-great-gatsby.jpg" alt="">
+                            <img class="pos" src="C:\Users\Shrikar Hejib\Desktop\PySpy\Web\CSS Projects\\OTT\posters\spider-man-ASV.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+        </div>
+                <!-- <div class="titles-about"> -->
+                    <div class="titles about">
+                        <h2 id="abo">OUR WEBSITE</h2>
+                        <h3 class="au">About Us</h3>
+                        <h3 class="au">Join Us</h3>
+                        <h3 class="nh">Need Help?</h3>
+                        <h4 class="nh">Share Feedback</h4>
+                        <h4 class="nh">Visit Help Center</h4>
+                        <h3 class="cw">Connect With Us</h3>
+                        <div class="socials">
+                            <img class="f" src="facebook.png" alt="">
+                            <img class="x" src="Twitter-X.png" alt="">
+                        </div>
+
+                        <p class="par">© 2023 BINGE. All Rights Reserved
+                            <br>
+                            <a href="" class="dummy">FAQ</a> &emsp;
+                            <a href="" class="dummy">Terms</a> &emsp; 
+                            <a href="" class="dummy">Privacy</a> 
+                        </p>
+
+
+                        
+                    </div>
+                </div>
+
+                <div id="popup-box" class="modal">
+                    <div class="content">
+                        <table>
+                            <form action="">
+                                <tr>
+                                    <td colspan="2"><h1>Sign Up for Free</h1></td>
+                                </tr>
+                                    <tr>
+                                            <td>
+                                            <label>First Name<span class="req">*</label></td>
+                                            <td>
+                                            <input type="text" required autocomplete="off"> </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Last Name<span class="req">*</label></td>
+                                            <td><input type="text"required autocomplete="off"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Email Address<span class="req">*</label></td>
+                                            <td><input type="email"required autocomplete="off"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Set A Password<span class="req">*</label></td>
+                                            <td><input type="password"required autocomplete="off"></td>
+                                        </tr>
+                                        <tr><td></td></tr>
+                                        <tr><td></td></tr>
+                                        <tr><td></td></tr>
+                                        <tr><td></td></tr>
+                                        <tr><td></td></tr>
+                                        <tr>
+                                            <td colspan="2" align="center"><button class="button" type="submit">Get Started</button></td>
+                                        </tr>
+
+                                        <tr><td><br><label for="">Existing User?</label><br></td></tr>
+                                    </form>
+                                    <tr><td colspan="2"><h1>Welcome Back!</h1></td></tr>
+                                        <form action="">
+                                            <tr>
+                                            <td><label>Email Address<span class="req">*</label></td>
+                                            <td><input type="email"required autocomplete="off"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><label>Password<span class="req">*</label></td>
+                                                <td><input type="password"required autocomplete="off"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="forgot"><a href="">Forgot Password?</a></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" align="center">
+                                                    <button class="button">Log In</button>
+                                                </td>
+                                            </tr>
+                                        
+                                        
+                                        </form>
+                                        </div>
+
+                                    </div>
+                                    
+                                </div>
+                            </form> 
+                        <a href="#" class="box-close">
+                            ×
+                        </a>
+                    </table>
+
+                    </div>
+                </div>
+
+</div>
+</body>
+</html>
